@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="./css/addapp.css">
+
+</head>
+<script> 
+
+	function validateForm() {
+		var form = document.forms["myForm"];
+		var name = form.name.value; 
+		
+		if (name.length == 0) {
+    		alert("Please enter a valid name"); 
+    		return false; 
+		}
+		
+		return true; 
+	}
+
+
+</script>
+
+<body>
+    <h2>App Design Upload</h2>
+    <form name="myForm" action="scripts/newapp.php" method="post" enctype="multipart/form-data">
+        App Name: <input type="text" name="name" id="name"><br>
+        App Description: <input type="text" name="desc" id="desc"><br>
+        Screenshot1:<input type="file" name="file" id="file"><br>
+        Screenshot2:<input type="file" name="file2" id="file2"><br>
+        Screenshot3:<input type="file" name="file3" id="file3"><br>
+        Screenshot4:<input type="file" name="file4" id="file4"><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</body>
+</html>

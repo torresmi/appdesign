@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="./css/signup.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> New User
+</title>
+<h2> Create an Account</h2>
+<script> 
+
+	function validateForm() {
+		var form = document.forms["myForm"];
+		var name = form.name.value; 
+		var email = form.email.value;
+		var password = form.pwd.value;
+		
+		if (name.length == 0 || !isNaN(name)) {
+    		alert("Please enter a valid name"); 
+    		return false; 
+		}
+		
+		if (email.length == 0 || email.indexOf('@') == -1) {
+    		alert("Please enter a valid email");
+    		return false; 
+		}
+		
+		if (password.length == 0) {
+    		alert("Please enter a password"); 
+    		return false; 
+		}
+	
+		
+		return true; 
+	}
+
+
+</script>
+</head>
+
+<body>
+	<div id="form">
+	<form name="myForm" action="scripts/newuser.php" method="post" onsubmit="return validateForm();"> 
+		
+		User Name: <input type="text" name="name"/><br/>
+		Email: <input type="text" name="email"/><br/>
+		Password: <input type="password" name="pwd"><br/>
+		<input id="button" type="submit" value="Submit"/>
+	</form>
+	</div>
+</body>
+</html>
